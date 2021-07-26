@@ -23,8 +23,8 @@ export default function getStyle(theme: Theme = {}) {
       color: appStyle.dayTextColor
     },
     calendar: {
-      paddingLeft: 15,
-      paddingRight: 15
+      paddingLeft: 0,
+      paddingRight: 0
     },
     staticHeader: {
       position: 'absolute',
