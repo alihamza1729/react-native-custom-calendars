@@ -1,22 +1,23 @@
 import {StyleSheet} from 'react-native';
-// @ts-expect-error
 import * as defaultStyle from '../../../style';
-import {Theme} from '../../../commons/types';
 
+
+const STYLESHEET_ID = 'stylesheet.day.period';
 const FILLER_HEIGHT = 34;
 
-export default function styleConstructor(theme: Theme = {}) {
+export default function styleConstructor(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     wrapper: {
       alignItems: 'center',
       alignSelf: 'stretch',
-      marginLeft: -1
+      marginLeft: -1,
     },
     base: {
       width: 38,
       height: FILLER_HEIGHT,
-      alignItems: 'center'
+      alignItems: 'center',
+      // backgroundColor: 'yellow',
     },
 
     fillers: {
@@ -24,15 +25,18 @@ export default function styleConstructor(theme: Theme = {}) {
       height: FILLER_HEIGHT,
       flexDirection: 'row',
       left: 0,
-      right: 0
+      right: 0,
+      borderRadius:5,
     },
     leftFiller: {
       height: FILLER_HEIGHT,
-      flex: 1
+      flex: 1,
+      borderRadius:2
     },
     rightFiller: {
       height: FILLER_HEIGHT,
-      flex: 1
+      flex: 1,
+      borderRadius: 2
     },
 
     text: {
@@ -56,18 +60,19 @@ export default function styleConstructor(theme: Theme = {}) {
     disabledText: {
       color: appStyle.textDisabledColor
     },
-    
+
     quickAction: {
       backgroundColor: 'white',
       borderWidth: 1,
-      borderColor: '#c1e4fe'
+      borderColor: '#c1e4fe',
+
     },
     quickActionText: {
       marginTop: 6,
       color: appStyle.textColor
     },
     firstQuickAction: {
-      backgroundColor: appStyle.textLinkColor
+      backgroundColor: appStyle.textLinkColor,
     },
     firstQuickActionText: {
       color: 'white'
@@ -75,6 +80,6 @@ export default function styleConstructor(theme: Theme = {}) {
     naText: {
       color: '#b6c1cd'
     },
-    ...(theme.stylesheet?.day?.period || {})
+    ...(theme[STYLESHEET_ID] || {})
   });
 }

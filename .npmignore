@@ -17,7 +17,7 @@ jest-setup.js
 .watchmanconfig
 
 .eslintrc
-.eslintrc.js
+
 .prettierrc.json
 
 e2e
@@ -261,4 +261,4 @@ scripts/
 *.ts
 *.tsx
 # include the .d.ts files
-!*.d.ts 
+!*.d.ts
