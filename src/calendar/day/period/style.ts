@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
 import * as defaultStyle from '../../../style';
-
 const STYLESHEET_ID = 'stylesheet.day.period';
 const FILLER_HEIGHT = 34;
 
