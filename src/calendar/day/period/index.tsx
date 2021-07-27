@@ -9,6 +9,13 @@ import * as defaultStyle from "../../../style";
 import styleConstructor from "./style";
 import Dot from "../dot";
 
+const colors = {
+  primaryDark: "#0097a7",
+  rippleColor: "#0556a0",
+  primary: "#1576D1",
+  primaryLight: "#C1DCF5",
+}
+
 export default class PeriodDay extends Component {
   static displayName = "IGNORE";
 
@@ -130,7 +137,9 @@ export default class PeriodDay extends Component {
       textStyle.push(this.style.todayText);
     }
 
-    // console.log(JSON.stringify(marking))
+
+
+
     if (marking) {
       containerStyle.push({
         borderRadius: 5,
@@ -196,6 +205,35 @@ export default class PeriodDay extends Component {
         containerStyle.push({
           backgroundColor: flags.endingDay.color,
         });
+      }
+      if (marking.same){
+        if (marking.same){
+          leftFillerStyle={
+            borderRadius:5,
+            borderWidth:2,
+            borderColor: colors.primary,
+            backgroundColor: colors.primaryLight,
+            marginLeft:4
+          };
+          rightFillerStyle={
+            borderRadius:5,
+            borderWidth:2,
+            borderColor: colors.primary,
+            backgroundColor: colors.primaryLight,
+            marginRight:4
+          };
+          containerStyle.push({
+            borderColor: colors.primary,
+            borderTopWidth:2,
+            borderBottomWidth:2,
+            backgroundColor: colors.primaryLight,
+          })
+          textStyle.push({
+            color: colors.primary,
+            fontWeight: '500'
+          })
+        }
+
       }
 
       fillers = (
