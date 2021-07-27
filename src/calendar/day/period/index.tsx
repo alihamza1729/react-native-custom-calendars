@@ -155,7 +155,7 @@ export default class PeriodDay extends Component {
       if (flags.startingDay && !flags.endingDay) {
         leftFillerStyle = {
           backgroundColor:  flags.startingDay.color,
-          marginLeft:5,
+          // marginLeft:5,
           borderRadius:5
         };
         rightFillerStyle = {
