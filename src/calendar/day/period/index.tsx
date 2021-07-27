@@ -2,7 +2,7 @@ import _ from "lodash";
 import PropTypes from "prop-types";
 
 import React, { Component } from "react";
-import { TouchableWithoutFeedback, Text, View } from "react-native";
+import {TouchableWithoutFeedback, Text, View, TouchableOpacity} from "react-native";
 
 import { shouldUpdate } from "../../../component-updater";
 import * as defaultStyle from "../../../style";
@@ -164,12 +164,12 @@ export default class PeriodDay extends Component {
       if (flags.startingDay && !flags.endingDay) {
         leftFillerStyle = {
           backgroundColor:  flags.startingDay.color,
-          // marginLeft:5,
+          marginLeft:5,
           borderRadius:5
         };
         rightFillerStyle = {
           backgroundColor: flags.startingDay.color,
-          borderRadius: 5
+          borderRadius: 0
         };
         containerStyle.push({
           backgroundColor: flags.startingDay.color,
@@ -177,12 +177,12 @@ export default class PeriodDay extends Component {
       } else if (flags.endingDay && !flags.startingDay) {
         rightFillerStyle = {
           backgroundColor: flags.endingDay.color,
-          // marginRight:5,
+          marginRight:5,
           borderRadius:5
         };
         leftFillerStyle = {
           backgroundColor: flags.endingDay.color,
-          borderRadius: 5
+          borderRadius: 0
         };
         containerStyle.push({
           backgroundColor: flags.endingDay.color,
@@ -247,12 +247,14 @@ export default class PeriodDay extends Component {
     const { theme, accessibilityLabel, testID } = this.props;
 
     return (
-      <TouchableWithoutFeedback
+      <TouchableOpacity
         testID={testID}
         onPress={this.onPress}
         onLongPress={this.onLongPress}
         disabled={marking?.disableTouchEvent}
         accessible
+        activeOpacity={0.5}
+        style={{alignSelf:'stretch'}}
         accessibilityRole={marking?.disableTouchEvent ? undefined : "button"}
         accessibilityLabel={accessibilityLabel}
       >
@@ -262,10 +264,10 @@ export default class PeriodDay extends Component {
             <Text allowFontScaling={false} style={textStyle}>
               {String(this.props.children)}
             </Text>
-            <Dot theme={theme} color={marking?.dotColor} marked={marking?.marked} />
+            {/*<Dot theme={theme} color={marking?.dotColor} marked={marking?.marked} />*/}
           </View>
         </View>
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
     );
   }
 }
