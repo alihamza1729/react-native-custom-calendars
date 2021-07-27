@@ -50,7 +50,7 @@ export default class PeriodDay extends Component {
 
   getDrawingStyle(marking) {
     // console.log("check",JSON.stringify(marking.color))
-    const defaultStyle = { textStyle: {}, containerStyle: { borderRadius: 2 } };
+    const defaultStyle = { textStyle: {}, containerStyle: {}  };
 
     if (!marking) {
       return defaultStyle;
@@ -115,7 +115,7 @@ export default class PeriodDay extends Component {
 
   render() {
     const { state, marking } = this.props;
-    const containerStyle = [this.style.base];
+    const containerStyle = [this.style.base,];
     const textStyle = [this.style.text];
     let leftFillerStyle = {};
     let rightFillerStyle = {};
@@ -133,7 +133,7 @@ export default class PeriodDay extends Component {
     // console.log(JSON.stringify(marking))
     if (marking) {
       containerStyle.push({
-        borderRadius: 0,
+        borderRadius: 5,
         overflow: "hidden",
 
       });
@@ -154,30 +154,37 @@ export default class PeriodDay extends Component {
 
       if (flags.startingDay && !flags.endingDay) {
         leftFillerStyle = {
-          backgroundColor: this.theme.calendarBackground,
+          backgroundColor:  flags.startingDay.color,
+          marginLeft:5,
+          borderRadius:5
         };
         rightFillerStyle = {
           backgroundColor: flags.startingDay.color,
+          borderRadius: 5
         };
         containerStyle.push({
           backgroundColor: flags.startingDay.color,
         });
       } else if (flags.endingDay && !flags.startingDay) {
         rightFillerStyle = {
-          backgroundColor: this.theme.calendarBackground,
+          backgroundColor: flags.endingDay.color,
+          // marginRight:5,
+          borderRadius:5
         };
         leftFillerStyle = {
           backgroundColor: flags.endingDay.color,
+          borderRadius: 5
         };
         containerStyle.push({
           backgroundColor: flags.endingDay.color,
         });
       } else if (flags.day) {
-        leftFillerStyle = { backgroundColor: flags.day.color };
-        rightFillerStyle = { backgroundColor: flags.day.color };
+        leftFillerStyle = { backgroundColor: flags.day.color,  borderRadius:5, };
+        rightFillerStyle = { backgroundColor: flags.day.color ,  borderRadius:5,};
         fillerStyle = {
           backgroundColor: flags.day.color,
-          marginHorizontal:marking?.marked?5:0
+          marginHorizontal:marking?.marked?4:0,
+          borderRadius:marking?.marked?5:0,
         };
       } else if (flags.endingDay && flags.startingDay) {
         rightFillerStyle = {

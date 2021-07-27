@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import * as defaultStyle from '../../../style';
 const STYLESHEET_ID = 'stylesheet.day.period';
-const FILLER_HEIGHT = 34;
+const FILLER_HEIGHT = 38;
 
 export default function styleConstructor(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
@@ -9,13 +9,12 @@ export default function styleConstructor(theme={}) {
     wrapper: {
       alignItems: 'center',
       alignSelf: 'stretch',
-      marginLeft: -1,
     },
     base: {
-      width: 38,
+      width: 34,
       height: FILLER_HEIGHT,
       alignItems: 'center',
-      // backgroundColor: 'yellow',
+      marginHorizontal:5
     },
 
     fillers: {
@@ -24,17 +23,15 @@ export default function styleConstructor(theme={}) {
       flexDirection: 'row',
       left: 0,
       right: 0,
-      borderRadius:5,
     },
     leftFiller: {
       height: FILLER_HEIGHT,
-      flex: 1,
-      borderRadius:2
+      flex:1,
+
     },
     rightFiller: {
       height: FILLER_HEIGHT,
       flex: 1,
-      borderRadius: 2
     },
 
     text: {
@@ -46,7 +43,7 @@ export default function styleConstructor(theme={}) {
       backgroundColor: 'rgba(255, 255, 255, 0)'
     },
     today: {
-      backgroundColor: appStyle.todayBackgroundColor
+      backgroundColor: appStyle.todayBackgroundColor,
     },
     todayText: {
       fontWeight: '500',
@@ -63,7 +60,6 @@ export default function styleConstructor(theme={}) {
       backgroundColor: 'white',
       borderWidth: 1,
       borderColor: '#c1e4fe',
-
     },
     quickActionText: {
       marginTop: 6,
