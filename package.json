@@ -1,5 +1,5 @@
 {
-  "name": "react-native-calendars",
+  "name": "react-native-custom-calendars",
   "version": "1.22.0",
   "main": "src/index.js",
   "description": "React Native Calendar Components",
@@ -21,13 +21,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wix/react-native-calendars"
+    "url": "https://github.com/alihamza1729/react-native-custom-calendars.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "author": "Wix.com",
-  "license": "MIT",
+  "author": "https://github.com/alihamza1729",
+  "license": "ISC",
   "dependencies": {
     "hoist-non-react-statics": "^3.3.1",
     "immutable": "^4.0.0-rc.12",
