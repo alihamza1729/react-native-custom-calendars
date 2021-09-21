@@ -1,6 +1,6 @@
 # React Native Custom Calendars 🗓️ 📆
 
-[v1.1.2](https://www.npmjs.com/package/react-native-custom-calendars)
+[v1.1.3](https://www.npmjs.com/package/react-native-custom-calendars)
 
 This module includes various customizable **React-Native** calendar components.
 

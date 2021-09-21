@@ -236,25 +236,20 @@ export default class PeriodDay extends Component {
 
       }
       if (marking.single){
+
         if (marking.single){
           leftFillerStyle={
-            borderRadius:5,
-            borderWidth:2,
-            borderColor: colors.primary,
+            borderRadius:4,
             backgroundColor: colors.primary,
             marginLeft:4
           };
           rightFillerStyle={
-            borderRadius:5,
-            borderWidth:2,
-            borderColor: colors.primary,
+            borderRadius:4,
             backgroundColor: colors.primary,
             marginRight:4
           };
           containerStyle.push({
-            borderColor: colors.primary,
-            borderTopWidth:2,
-            borderBottomWidth:2,
+            borderRadius:5,
             backgroundColor: colors.primary,
           })
           textStyle.push({
@@ -264,7 +259,6 @@ export default class PeriodDay extends Component {
         }
 
       }
-
       fillers = (
         <View style={[this.style.fillers, fillerStyle]}>
           <View style={[this.style.leftFiller, leftFillerStyle]} />
